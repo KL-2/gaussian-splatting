@@ -1,0 +1,43 @@
+1. 3D Gaussian Splatting：
+	3D Gaussian Splatting论文代码：https://github.com/graphdeco-inria/gaussian-splatting/
+	优势：很好的保持了毛绒玩具的绒毛特性
+	
+1.1 激活环境
+	打开anaconda图形界面： anaconda-navigator 
+	查看已配置环境：conda env list
+	激活环境：source activate gaussiansplatting
+	关闭环境：conda deactivate
+	
+1.2 训练测试模型
+	训练模型：python train.py -s data -m data/output -w 
+		output:./data/output/point_cloud/iteration_30000/point_cloud.ply白色背景（去掉-w为黑色）
+		
+	gui：另一个terminal打开./SIBR_viewers/install/bin/SIBR_remoteGaussian_app
+
+1.3 输入输出
+	数据集构建：
+		📂 data
+
+		┣ 📂 (input)
+
+		┣ 📂 (distorted)
+
+		┣ 📂 images
+
+		┣ 📂 sparse
+
+		┃┣ 📂 0  
+
+		┃┃┣ 📜 points3D.bin
+
+		┃┃┣ 📜 images.bin
+
+                       ┃┃┣ 📜 cameras.bin 
+                       
+	训练模型存放：./logs/{DATASET}_test
+	
+1.4参数设置
+	configs:./configs/{DATASET}.txt
+	训练次数：N_iters
+		
+
